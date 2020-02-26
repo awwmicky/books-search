@@ -2,7 +2,7 @@
   "name": "books-search",
   "version": "1.0.0",
   "description": "",
-  "main": "",
+  "main": "server.js",
   "scripts": {
     "start": "cd server && node server.js",
     "client": "cd client && npm start",
