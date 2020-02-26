@@ -4,7 +4,7 @@ const app = express();
 
 
 if (process.env.NODE_ENV === 'production') {
-    app.use( express.static('./client/build/') )
+    app.use( express.static('../client/build/') )
 }
 
 const logger = require('morgan');
@@ -15,7 +15,7 @@ app.use( express.urlencoded({ extended : true }) )
 
 const apiRoutes = require('./routes/api-route.js');
 // const htmlRoutes = require('./routes/html-route.js');
-app.use('/', apiRoutes)
+app.use('/api', apiRoutes)
 // app.use('/', htmlRoutes)
 
 // app.use( (req,res,next) => {
