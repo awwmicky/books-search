@@ -11,8 +11,7 @@ app.use( express.urlencoded({ extended : true }) )
 
 
 if (process.env.NODE_ENV === 'production') {
-    console.log('working - √')
-    app.use( express.static('/client/build/') )
+    app.use( express.static('./client/build/') )
 }
 
 
