@@ -22,22 +22,22 @@ const apiRoutes = require('./routes/api-route.js');
 app.use('/api', apiRoutes)
 // app.use('/', htmlRoutes)
 
-app.use( (req,res,next) => {
-    const error = new Error('×: not found');
-    error.status = 404;
-    next(error)
-})
+// app.use( (req,res,next) => {
+//     const error = new Error('×: not found');
+//     error.status = 404;
+//     next(error)
+// })
 
-app.use( (err,req,res,next) => {
-    res
-    .status(err.status || 505)
-    .json({ 
-        error: { 
-            status: err.status,
-            message: err.message 
-        } 
-    })
-})
+// app.use( (err,req,res,next) => {
+//     res
+//     .status(err.status || 505)
+//     .json({ 
+//         error: { 
+//             status: err.status,
+//             message: err.message 
+//         } 
+//     })
+// })
 
 
 
