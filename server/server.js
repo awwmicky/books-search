@@ -3,22 +3,19 @@ const app = express();
 
 
 
+if (process.env.NODE_ENV === 'production') {
+    app.use( express.static('./client/build/') )
+}
+
 const logger = require('morgan');
 app.use( logger('dev') )
 app.use( express.json() )
 app.use( express.urlencoded({ extended : true }) )
 
 
-
-if (process.env.NODE_ENV === 'production') {
-    app.use( express.static('./client/build/') )
-}
-
-
-
 const apiRoutes = require('./routes/api-route.js');
 // const htmlRoutes = require('./routes/html-route.js');
-app.use('/api', apiRoutes)
+app.use('/', apiRoutes)
 // app.use('/', htmlRoutes)
 
 // app.use( (req,res,next) => {
