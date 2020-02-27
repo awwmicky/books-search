@@ -1,24 +1,10 @@
 const router = require('express').Router();
-const { Search } = require('../models/');
+// const { Search } = require('../models/');
+const search = require('../controllers/search.js');
 
 
 
-router.get('/all', (req,res,next) => {
-    
-    console.log('— GET —')
-
-    Search
-    .find()
-    .then( result => { 
-        console.log(result)
-        res.send(result)
-    })
-    .catch( err => {
-        console.log(err)
-        next(err)
-    })
-
-})
+router.get('/all', search.all)
 
 
 
