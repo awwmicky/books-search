@@ -1,15 +1,15 @@
 import React from 'react'
 // , { useState }
-import './main.css'
+import './main-page.css'
 
 
 
-export default function Main () {
+export default function MainPage () {
 
   return (
     <main>
       <div className="container-wrapper">
-        <h1>Title</h1>
+        <h1>MAIN PAGE</h1>
       </div>
     </main>
   );
